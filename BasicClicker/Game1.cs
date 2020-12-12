@@ -6,12 +6,13 @@ namespace BasicClicker
 {
     public class Game1 : Game
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        public GraphicsDeviceManager BCGraphicsDeviceManager { get; }
+
+        public SpriteBatch BCSpriteBatch { get; private set; }
 
         public Game1()
         {
-            _graphics = new GraphicsDeviceManager(this);
+            BCGraphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -25,7 +26,7 @@ namespace BasicClicker
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            BCSpriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
         }
