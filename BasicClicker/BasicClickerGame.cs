@@ -4,13 +4,13 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BasicClicker
 {
-    public class Game1 : Game
+    public class BasicClickerGame : Game
     {
         public GraphicsDeviceManager BCGraphicsDeviceManager { get; }
 
         public SpriteBatch BCSpriteBatch { get; private set; }
 
-        public Game1()
+        public BasicClickerGame()
         {
             BCGraphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
