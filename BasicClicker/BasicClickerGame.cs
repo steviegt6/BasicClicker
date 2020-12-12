@@ -1,51 +1,96 @@
-﻿using Microsoft.Xna.Framework;
+﻿using BasicClicker.Assets;
+using log4net;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace BasicClicker
 {
     public class BasicClickerGame : Game
     {
+        /// <summary>
+        /// GraphicsDeviceManager used by the entirety of BasicClicker.
+        /// </summary>
         public GraphicsDeviceManager BCGraphicsDeviceManager { get; }
 
+        /// <summary>
+        /// SpriteBatch used by the entirety of BasicClicker.
+        /// </summary>
         public SpriteBatch BCSpriteBatch { get; private set; }
+
+        public static bool GameIsIdle;
+
+        public static BasicClickerGame Instance { get; private set; }
+
+        /// <summary>
+        /// Logger used by BaseClicker.
+        /// </summary>
+        public static ILog Logger;
 
         public BasicClickerGame()
         {
+            Instance = this;
             BCGraphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
 
+        protected override void OnActivated(object sender, EventArgs args)
+        {
+            Window.Title = "Basic Clicker";
+
+            GameIsIdle = false;
+
+            base.OnActivated(sender, args);
+        }
+
+        protected override void OnDeactivated(object sender, EventArgs args)
+        {
+            Window.Title = "Basic Clicker - Idle";
+
+            GameIsIdle = true;
+
+            base.OnDeactivated(sender, args);
+        }
+
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            Logger = LogManager.GetLogger("BaseClicker");
+
+            Logger.Info("Initializing");
+
+            GameIsIdle = false;
 
             base.Initialize();
+
+            Logger.Info("Initialized");
         }
 
         protected override void LoadContent()
         {
+            Logger.Info("Loading content");
+
             BCSpriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            AssetManager.LoadAssets();
+
+            Logger.Info("Content loaded");
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.White);
 
-            // TODO: Add your drawing code here
+            BCSpriteBatch.Begin();
+
+            BCSpriteBatch.DrawString(AssetManager.Consola, "Test", new Vector2(0, 0), Color.Black);
+
+            BCSpriteBatch.End();
 
             base.Draw(gameTime);
         }
