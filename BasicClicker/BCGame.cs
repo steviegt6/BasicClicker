@@ -2,6 +2,7 @@
 using log4net;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using System;
 
 namespace BasicClicker
@@ -35,6 +36,9 @@ namespace BasicClicker
 
             Main.GameIsIdle = false;
 
+            if (MediaPlayer.State == MediaState.Paused)
+                MediaPlayer.Resume();
+
             base.OnActivated(sender, args);
         }
 
@@ -45,6 +49,9 @@ namespace BasicClicker
             Window.Title = "Basic Clicker - Idle";
 
             Main.GameIsIdle = true;
+
+            if (MediaPlayer.State == MediaState.Playing)
+                MediaPlayer.Pause();
 
             base.OnDeactivated(sender, args);
         }
@@ -57,6 +64,9 @@ namespace BasicClicker
             Window.AllowAltF4 = true;
 
             base.Initialize();
+
+            MediaPlayer.Play(AssetManager.Melancholy);
+            MediaPlayer.IsRepeating = true;
 
             Main.Logger.Info("Initialized");
         }

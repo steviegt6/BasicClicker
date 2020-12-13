@@ -32,3 +32,9 @@
 /processorParam:TextureFormat=Color
 /build:Images/icon.png;Images/TomatoLarge.png
 
+#begin Sounds/Melancholy_BGM.ogg
+/importer:OggImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sounds/Melancholy_BGM.ogg
+

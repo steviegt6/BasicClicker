@@ -1,9 +1,13 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace BasicClicker.Assets
 {
     public static class AssetManager
     {
+        /* Songs */
+        public static Song Melancholy;
+
         /* SpriteFonts */
         public static SpriteFont Consola;
 
@@ -12,6 +16,8 @@ namespace BasicClicker.Assets
 
         public static void LoadAssets()
         {
+            Melancholy = BCGame.Instance.Content.Load<Song>("Sounds\\Melancholy_BGM");
+
             // SpriteFonts
             Consola = BCGame.Instance.Content.Load<SpriteFont>("Fonts\\Consola");
 
