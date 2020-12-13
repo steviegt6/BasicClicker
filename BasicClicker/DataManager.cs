@@ -1,9 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
-
 
 namespace BasicClicker
 {
@@ -13,7 +9,7 @@ namespace BasicClicker
         {
             SaveData data = new SaveData();
             string JSONresult = JsonConvert.SerializeObject(data);
-            string filename = @"SaveFile.json"; 
+            string filename = @"SaveFile.json";
 
             if (File.Exists(filename))
             {
@@ -33,13 +29,11 @@ namespace BasicClicker
                 }
             }
         }
-
     }
+
     // What types of data goes into the JSON
     public class SaveData
     {
         public int Tomatoes = 0;
     }
-
 }
-
