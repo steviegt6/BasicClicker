@@ -60,6 +60,8 @@ namespace BasicClicker
         {
             Main.Logger.Info("Initializing");
 
+            DataManager.CreateSaveFile();
+
             Window.AllowUserResizing = true;
             Window.AllowAltF4 = true;
 
