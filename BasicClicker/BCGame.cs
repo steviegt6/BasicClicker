@@ -1,4 +1,5 @@
 ﻿using BasicClicker.Assets;
+using BasicClicker.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;

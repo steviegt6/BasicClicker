@@ -1,12 +1,12 @@
 ﻿using BasicClicker.Assets;
-using BasicClicker.GameContent.MainContent;
+using BasicClicker.Core.GameContent.MainContent;
 using log4net;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 
-namespace BasicClicker
+namespace BasicClicker.Core
 {
     /// <summary>
     /// Main class for most non-categorized fields and methods. <br />
