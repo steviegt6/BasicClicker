@@ -1,13 +1,16 @@
-﻿using System;
+﻿using log4net;
+using System;
 
 namespace BasicClicker
 {
     public static class Program
     {
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-            using (var game = new BasicClickerGame())
+            BasicClicker.Main.Logger = LogManager.GetLogger("BasicClicker");
+
+            using (var game = new BCGame())
                 game.Run();
         }
     }

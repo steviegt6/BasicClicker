@@ -6,9 +6,9 @@ using System;
 
 namespace BasicClicker
 {
-    public class BasicClickerGame : Game
+    public class BCGame : Game
     {
-        public static BasicClickerGame Instance { get; private set; }
+        public static BCGame Instance { get; private set; }
 
         /// <summary>
         /// GraphicsDeviceManager used by the entirety of BasicClicker.
@@ -20,7 +20,7 @@ namespace BasicClicker
         /// </summary>
         public SpriteBatch BCSpriteBatch { get; private set; }
 
-        public BasicClickerGame()
+        public BCGame()
         {
             Instance = this;
             BCGraphicsDeviceManager = new GraphicsDeviceManager(this);
