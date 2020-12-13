@@ -12,6 +12,8 @@ namespace BasicClicker
 
             using (var game = new BCGame())
                 game.Run();
+
+            DataManager.CreateSaveFile();
         }
     }
 }
