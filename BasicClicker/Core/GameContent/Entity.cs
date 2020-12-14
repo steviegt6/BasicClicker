@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BasicClicker.GameContent
+namespace BasicClicker.Core.GameContent
 {
     public abstract class Entity : IUpdateable, IDrawable
     {

@@ -8,7 +8,7 @@ namespace BasicClicker
         [STAThread]
         private static void Main()
         {
-            BasicClicker.Main.Logger = LogManager.GetLogger("BasicClicker");
+            Core.Main.Logger = LogManager.GetLogger("BasicClicker");
 
             using (var game = new BCGame())
                 game.Run();

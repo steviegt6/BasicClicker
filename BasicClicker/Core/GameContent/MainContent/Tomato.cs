@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BasicClicker.GameContent.MainContent
+namespace BasicClicker.Core.GameContent.MainContent
 {
     public class Tomato : Entity
     {
@@ -11,7 +11,7 @@ namespace BasicClicker.GameContent.MainContent
         public override void Update(GameTime gameTime)
         {
             Position = screenMiddle;
-            Hitbox = new Rectangle((int)screenMiddle.X - (AssetManager.TomatoLarge.Width / 2), (int)screenMiddle.Y - (AssetManager.TomatoLarge.Height / 2), AssetManager.TomatoLarge.Width, AssetManager.TomatoLarge.Height);
+            Hitbox = new Rectangle((int)screenMiddle.X - AssetManager.TomatoLarge.Width / 2, (int)screenMiddle.Y - AssetManager.TomatoLarge.Height / 2, AssetManager.TomatoLarge.Width, AssetManager.TomatoLarge.Height);
 
             if (Main.Cursor.Hitbox.Intersects(Main.LargeTomato.Hitbox))
                 Main.TomatoScale = MathHelper.Lerp(Main.TomatoScale, 1f, 0.15f);

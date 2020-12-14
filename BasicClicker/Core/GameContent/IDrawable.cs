@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 
-namespace BasicClicker.GameContent
+namespace BasicClicker.Core.GameContent
 {
     public interface IDrawable
     {

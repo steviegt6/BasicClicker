@@ -1,6 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿using BasicClicker.Core;
+using BasicClicker.Core.GameContent;
+using Microsoft.Xna.Framework;
 
-namespace BasicClicker.GameContent.MainContent
+namespace BasicClicker.Core.GameContent.MainContent
 {
     public class Cursor : Entity
     {
