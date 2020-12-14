@@ -1,5 +1,6 @@
 ﻿using BasicClicker.Assets;
 using BasicClicker.Core;
+using BasicClicker.Core.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
@@ -59,6 +60,10 @@ namespace BasicClicker
         protected override void Initialize()
         {
             Main.Logger.Info("Initializing");
+
+            Main.BCSaveData = new BCSaveFile();
+            Main.BCSaveData.SaveData();
+            Main.BCSaveData.LoadData();
 
             Window.AllowUserResizing = true;
             Window.AllowAltF4 = true;

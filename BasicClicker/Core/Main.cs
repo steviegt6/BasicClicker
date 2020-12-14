@@ -1,5 +1,6 @@
 ﻿using BasicClicker.Assets;
 using BasicClicker.Core.GameContent.MainContent;
+using BasicClicker.Core.IO;
 using log4net;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -24,6 +25,7 @@ namespace BasicClicker.Core
         public static bool GameIsIdle = false;
         public static readonly string VersionText = $"BasicClicker v{BCVersion}";
 
+        public static BCSaveFile BCSaveData;
         public static TomatoClickable LargeTomato = new TomatoClickable();
         public static Cursor Cursor = new Cursor();
         public static MouseState BCMouse = Mouse.GetState();
