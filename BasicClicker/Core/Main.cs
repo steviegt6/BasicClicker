@@ -24,7 +24,7 @@ namespace BasicClicker.Core
         public static bool GameIsIdle = false;
         public static readonly string VersionText = $"BasicClicker v{BCVersion}";
 
-        public static Tomato LargeTomato = new Tomato();
+        public static TomatoClickable LargeTomato = new TomatoClickable();
         public static Cursor Cursor = new Cursor();
         public static MouseState BCMouse = Mouse.GetState();
         public static Vector2 WindowMeasurements = Vector2.Zero;

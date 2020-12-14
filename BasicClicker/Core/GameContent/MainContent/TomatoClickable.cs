@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace BasicClicker.Core.GameContent.MainContent
 {
-    public class Tomato : Entity
+    public class TomatoClickable : Entity
     {
         public Vector2 screenMiddle => Main.WindowMeasurements / 2f;
 
