@@ -10,9 +10,6 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
   </ItemGroup>
@@ -34,5 +31,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Sounds\" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 </Project>

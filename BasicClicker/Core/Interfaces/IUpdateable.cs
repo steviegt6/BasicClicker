@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace BasicClicker.Core.GameContent
+namespace BasicClicker.Core.Interfaces
 {
     public interface IUpdateable
     {

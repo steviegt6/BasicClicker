@@ -1,4 +1,4 @@
-﻿using BasicClicker.Assets;
+﻿using BasicClicker.Core.Assets;
 using BasicClicker.Core.GameContent.MainContent;
 using BasicClicker.Core.IO;
 using log4net;
@@ -15,22 +15,14 @@ namespace BasicClicker.Core
     /// </summary>
     public static class Main
     {
-        /// <summary>
-        /// Logger used by BasicClicker.
-        /// </summary>
-        public static ILog Logger;
-
         public static readonly Version BCVersion = new Version(0, 0, 1, 0);
-
-        public static bool GameIsIdle = false;
         public static readonly string VersionText = $"BasicClicker v{BCVersion}";
-
         public static BCSaveFile BCSaveData;
         public static TomatoClickable LargeTomato = new TomatoClickable();
         public static Cursor Cursor = new Cursor();
         public static MouseState BCMouse = Mouse.GetState();
         public static Vector2 WindowMeasurements = Vector2.Zero;
-        public static float TomatoScale = 1f;
+        public static bool GameIsIdle = false;
 
         public static void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
@@ -45,8 +37,8 @@ namespace BasicClicker.Core
 
             // Draw the tomato
             // Draw code can be found in Tomato.cs
-            LargeTomato.Draw(spriteBatch);
-            Cursor.Draw(spriteBatch);
+            LargeTomato.Draw(gameTime, spriteBatch);
+            Cursor.Draw(gameTime, spriteBatch);
         }
 
         public static void Update(GameTime gameTime)

@@ -1,5 +1,6 @@
-﻿using BasicClicker.Assets;
+﻿using BasicClicker.API.APICore;
 using BasicClicker.Core;
+using BasicClicker.Core.Assets;
 using BasicClicker.Core.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -46,8 +47,8 @@ namespace BasicClicker
         // Called when the program gets unfocused
         protected override void OnDeactivated(object sender, EventArgs args)
         {
-            // Indicate the program is on idle when unfocused
-            Window.Title = "Basic Clicker - Idle";
+            // Indicate the program is idle when unfocused
+            Window.Title = "Basic Clicker - IDLE";
 
             Main.GameIsIdle = true;
 
@@ -59,7 +60,9 @@ namespace BasicClicker
 
         protected override void Initialize()
         {
-            Main.Logger.Info("Initializing");
+            Logging.Logger.Info("Initializing");
+
+            base.Initialize();
 
             Main.BCSaveData = new BCSaveFile();
             Main.BCSaveData.SaveData();
@@ -68,22 +71,22 @@ namespace BasicClicker
             Window.AllowUserResizing = true;
             Window.AllowAltF4 = true;
 
-            base.Initialize();
-
             MediaPlayer.Play(AssetManager.Melancholy);
             MediaPlayer.IsRepeating = true;
 
-            Main.Logger.Info("Initialized");
+            ModLoader.LoadMods();
+
+            Logging.Logger.Info("Initialized");
         }
 
         protected override void LoadContent()
         {
-            Main.Logger.Info("Loading content");
+            Logging.Logger.Info("Loading content");
 
             BCSpriteBatch = new SpriteBatch(GraphicsDevice);
             AssetManager.LoadAssets();
 
-            Main.Logger.Info("Content loaded");
+            Logging.Logger.Info("Content loaded");
         }
 
         protected override void Update(GameTime gameTime)

@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using BasicClicker.Core;
 using System;
 
 namespace BasicClicker
@@ -8,7 +8,7 @@ namespace BasicClicker
         [STAThread]
         private static void Main()
         {
-            Core.Main.Logger = LogManager.GetLogger("BasicClicker");
+            Logging.Load();
 
             using var game = new BCGame();
             game.Run();

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 
-namespace BasicClicker.Assets
+namespace BasicClicker.Core.Assets
 {
     public static class AssetManager
     {

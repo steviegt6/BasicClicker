@@ -1,4 +1,4 @@
-﻿using BasicClicker.Assets;
+﻿using BasicClicker.Core.Assets;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -12,6 +12,6 @@ namespace BasicClicker.Core.GameContent.MainContent
             Hitbox = new Rectangle((int)Position.X, (int)Position.Y, 1, 1);
         }
 
-        public override void Draw(SpriteBatch spriteBatch) => spriteBatch.Draw(AssetManager.Cursor, Position, Color.White);
+        public override void Draw(GameTime gameTime, SpriteBatch spriteBatch) => spriteBatch.Draw(AssetManager.Cursor, Position, Color.White);
     }
 }

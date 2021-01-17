@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
+﻿using BasicClicker.Core.Interfaces;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace BasicClicker.Core.GameContent
 {
-    public abstract class Entity : IUpdateable, IDrawable
+    public abstract class Entity : Interfaces.IUpdateable, Interfaces.IDrawable
     {
         public Vector2 Position;
 
@@ -13,7 +14,7 @@ namespace BasicClicker.Core.GameContent
 
         public virtual bool IntersectsRectangle(Rectangle hitbox) => Hitbox.Intersects(hitbox);
 
-        public virtual void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
         }
 

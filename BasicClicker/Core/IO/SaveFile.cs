@@ -34,8 +34,8 @@ namespace BasicClicker.Core.IO
             if (File.Exists(SavePath + Path.DirectorySeparatorChar + FileName))
                 File.Delete(SavePath + Path.DirectorySeparatorChar + FileName);
 
-            using (FileStream stream = File.Create(SavePath + Path.DirectorySeparatorChar + FileName))
-                Save(stream, formatter);
+            using FileStream stream = File.Create(SavePath + Path.DirectorySeparatorChar + FileName);
+            Save(stream, formatter);
         }
 
         /// <summary>
