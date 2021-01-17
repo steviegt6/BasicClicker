@@ -1,6 +1,6 @@
-﻿using BasicClicker.Core;
-using BasicClicker.Core.GameContent;
+﻿using BasicClicker.Assets;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace BasicClicker.Core.GameContent.MainContent
 {
@@ -11,5 +11,7 @@ namespace BasicClicker.Core.GameContent.MainContent
             Position = new Vector2(Main.BCMouse.X, Main.BCMouse.Y);
             Hitbox = new Rectangle((int)Position.X, (int)Position.Y, 1, 1);
         }
+
+        public override void Draw(SpriteBatch spriteBatch) => spriteBatch.Draw(AssetManager.Cursor, Position, Color.White);
     }
 }

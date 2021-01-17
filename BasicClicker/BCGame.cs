@@ -27,7 +27,7 @@ namespace BasicClicker
             Instance = this;
             BCGraphicsDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
         }
 
         // Called when the program gets focused

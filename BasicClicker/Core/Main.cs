@@ -46,14 +46,15 @@ namespace BasicClicker.Core
             // Draw the tomato
             // Draw code can be found in Tomato.cs
             LargeTomato.Draw(spriteBatch);
+            Cursor.Draw(spriteBatch);
         }
 
         public static void Update(GameTime gameTime)
         {
             BCMouse = Mouse.GetState();
 
-            Cursor.Update(gameTime);
             LargeTomato.Update(gameTime);
+            Cursor.Update(gameTime);
         }
 
         public static void DrawVersionText(SpriteBatch spriteBatch, GraphicsDeviceManager graphicsDeviceManager, GraphicsDevice graphicsDevice)

@@ -10,8 +10,8 @@ namespace BasicClicker
         {
             Core.Main.Logger = LogManager.GetLogger("BasicClicker");
 
-            using (var game = new BCGame())
-                game.Run();
+            using var game = new BCGame();
+            game.Run();
         }
     }
 }
